@@ -2,23 +2,33 @@ package logica;
 
 import java.util.Date;
 import java.util.List;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
+@Entity
 public class Paciente extends Persona {
     
-    private int id_paciente;
     private boolean tiene_OS;
     private String tipo_sangre;
+    @OneToOne
     private Responsable unResponsable; //Relación 1 a 1
+    @OneToMany (mappedBy="pacien")
     private List<Turno> listaTurnos; // Relación 1 a n
 
-    public Paciente(int id_paciente, boolean tiene_OS, String tipo_sangre, Responsable unResponsable, List<Turno> listaTurnos, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Paciente(){
+    
+    }
+
+    public Paciente(boolean tiene_OS, String tipo_sangre, Responsable unResponsable, List<Turno> listaTurnos, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
         super(dni, nombre, apellido, telefono, direccion, fecha_nac);
-        this.id_paciente = id_paciente;
         this.tiene_OS = tiene_OS;
         this.tipo_sangre = tipo_sangre;
         this.unResponsable = unResponsable;
         this.listaTurnos = listaTurnos;
     }
+
+    
 
     public Responsable getUnResponsable() {
         return unResponsable;
@@ -34,16 +44,6 @@ public class Paciente extends Persona {
 
     public void setListaTurnos(List<Turno> listaTurnos) {
         this.listaTurnos = listaTurnos;
-    }
-
-    
-
-    public int getId_paciente() {
-        return id_paciente;
-    }
-
-    public void setId_paciente(int id_paciente) {
-        this.id_paciente = id_paciente;
     }
 
     public boolean isTiene_OS() {
