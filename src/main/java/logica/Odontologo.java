@@ -1,14 +1,15 @@
 package logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
-public class Odontologo extends Persona{
+public class Odontologo extends Persona implements Serializable{
     
 
     private String especialidad;
@@ -22,14 +23,13 @@ public class Odontologo extends Persona{
     public Odontologo() {
     }
 
-    public Odontologo(String especialidad, List<Turno> listaTurnos, Horario unHorario, Usuario unUsuario, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(dni, nombre, apellido, telefono, direccion, fecha_nac);
+    public Odontologo(String especialidad, List<Turno> listaTurnos, Horario unHorario, Usuario unUsuario, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+        super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.especialidad = especialidad;
         this.listaTurnos = listaTurnos;
         this.unHorario = unHorario;
         this.unUsuario = unUsuario;
     }
-
 
     public String getEspecialidad() {
         return especialidad;
