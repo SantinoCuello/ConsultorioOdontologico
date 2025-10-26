@@ -7,6 +7,7 @@
     <img src="https://static7.depositphotos.com/1003098/736/i/450/depositphotos_7364761-stock-photo-dentist-examining-patient.jpg" alt="alt"/>
     <br>
 
+    
 <%@include file="components/bodyfinal.jsp"%>
     
 </html>
