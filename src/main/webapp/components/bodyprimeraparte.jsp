@@ -52,7 +52,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePacients"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePacientsr"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-solid fa-user"></i>
                     <span>Pacientes</span>
@@ -77,7 +77,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>
-                        <a class="collapse-item" href="">Ver Usuarios</a>
+                        <a class="collapse-item" href="SvUsuarios">Ver Usuarios</a>
                         <a class="collapse-item" href="altaUsuarios.jsp">Alta Usuarios</a>
                     </div>
                 </div>
